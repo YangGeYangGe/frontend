@@ -1,4 +1,4 @@
-# html notes
+# html notes basic
 
 ## 1. 在vscode中，新建一个html文件，输入!后，选择第一个可以自动生成以下代码
 
@@ -66,3 +66,77 @@ utf-8是目前最常用的字符集编码方式，常用的字符集编码方式
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 width=device-width ：表示视口宽度等于屏幕宽度。
+
+#### (3) 定义“关键词”
+
+```
+<meta name="Keywords" content="网易,邮箱,游戏,新闻,体育,娱乐,女性,亚运,论坛,短信" />
+```
+这些关键词，就是告诉搜索引擎，这个网页是干嘛的，能够提高搜索命中率。让别人能够找到你，搜索到你。
+
+#### (4)定义“页面描述”
+
+meta除了可以设置字符集，还可以设置关键字和页面描述。
+
+只要设置Description页面描述，那么百度搜索结果，就能够显示这些语句，这个技术叫做SEO（search engine optimization，搜索引擎优化）。
+
+```
+<meta name="Description" content="网易是中国领先的互联网技术公司，为用户提供免费邮箱、游戏、搜索引擎服务，开设新闻、娱乐、体育等30多个内容频道，及博客、视频、论坛等互动交流，网聚人的力量。" />
+```
+
+上面的几种```<meta>```标签都不用记，但是另外还有一个```<meta>```标签是需要记住的：
+
+```
+<meta http-equiv="refresh" content="3;http://www.baidu.com">
+```
+上面这个标签的意思是说，3秒之后，自动跳转到百度页面。
+
+**title标签**
+用于设置网页的标题
+title也有助于SEO搜索引擎优化
+
+**base标签**
+```
+<base href="/">
+```
+base 标签用于指定基础的路径。指定之后，所有的 a 链接都是以这个路径为基准。
+
+## 6. body 标签
+
+```
+<body>标签的属性有：
+bgcolor：设置整个网页的背景颜色。
+background：设置整个网页的背景图片。
+text：设置网页中的文本颜色。
+leftmargin：网页的左边距。IE浏览器默认是8个像素。
+topmargin：网页的上边距。
+rightmargin：网页的右边距。
+bottommargin：网页的下边距。
+```
+
+```
+<body link="read" alink="blue" vlink="green">
+
+</body>
+
+link表示默认显示的颜色
+alink表示鼠标点击但还没松开时的颜色
+vlin表示点击完成之后显示的颜色
+```
+---
+## 字符集
+中文能够使用的字符集
+1. UTF-8
+2. GBK
+   
+字库规模：UTF-8 > gb2312
+我们用meta标签声明的当前这个html文档的字库，一定要和保存的文件编码类型一样，否则乱码（重点）。
+
+拿 sublime编辑器举例，当我们不设置的时候，sublime默认类型就是UTF-8。而一旦更改为gb2312的时候，就一定要记得设置一下sublime的保存类型： 文件→ set File Encoding to → Chinese Simplified(GBK)。VS Code 的道理一样。
+
+保存大小：UTF-8（更臃肿、加载更慢） > gb2312 （更小巧，加载更快）
+
+总结：
+
+UTF-8：字多，有各种国家的语言，但是保存尺寸大，文件臃肿；
+gb2312：字少，只用中文和少数外语和符号，但是尺寸小，文件小巧。
